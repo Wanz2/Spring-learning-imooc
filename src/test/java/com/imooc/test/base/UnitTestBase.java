@@ -17,7 +17,8 @@ public class UnitTestBase {
 	public UnitTestBase(String springXmlpath) {
 		this.springXmlpath = springXmlpath;
 	}
-	
+
+    //在@Test方法执行前执行的方法
 	@Before
 	public void before() {
 		if (StringUtils.isEmpty(springXmlpath)) {
@@ -30,7 +31,8 @@ public class UnitTestBase {
 			e.printStackTrace();
 		}
 	}
-	
+
+	//在@Test方法执行后执行的方法
 	@After
 	public void after() {
 		context.destroy();
